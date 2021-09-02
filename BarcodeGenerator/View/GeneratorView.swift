@@ -61,6 +61,7 @@ class GeneratorView: UIView {
         codeTextField.leftViewMode = .always
         codeTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         codeTextField.keyboardType = .asciiCapable
+        codeTextField.clearButtonMode = .whileEditing
         
         addSubview(codeTextField)
         

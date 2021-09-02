@@ -15,6 +15,7 @@
 		D9B0DDD526E0ACA500E1FAB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B0DDD326E0ACA500E1FAB8 /* LaunchScreen.storyboard */; };
 		D9B0DDDE26E0AD1200E1FAB8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9B0DDDD26E0AD1200E1FAB8 /* SnapKit */; };
 		D9B0DDE426E0AD5700E1FAB8 /* GeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0DDE326E0AD5700E1FAB8 /* GeneratorView.swift */; };
+		D9B0DDEA26E0D01600E1FAB8 /* BarcodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0DDE926E0D01600E1FAB8 /* BarcodeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D9B0DDD426E0ACA500E1FAB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9B0DDD626E0ACA500E1FAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9B0DDE326E0AD5700E1FAB8 /* GeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorView.swift; sourceTree = "<group>"; };
+		D9B0DDE926E0D01600E1FAB8 /* BarcodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		D9B0DDE226E0AD3E00E1FAB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D9B0DDE926E0D01600E1FAB8 /* BarcodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				D9B0DDCD26E0ACA200E1FAB8 /* ViewController.swift in Sources */,
 				D9B0DDC926E0ACA200E1FAB8 /* AppDelegate.swift in Sources */,
 				D9B0DDCB26E0ACA200E1FAB8 /* SceneDelegate.swift in Sources */,
+				D9B0DDEA26E0D01600E1FAB8 /* BarcodeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

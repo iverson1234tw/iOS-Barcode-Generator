@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         
         // generatorView properties
-        generatorView.codeTextField.text = "4711238491823"
+        generatorView.codeTextField.text = BarcodeModel.defaultCode
         generatorView.generateButton.addTarget(self, action: .generateButtonClicked, for: .touchUpInside)
         generatorView.lightSwitcher.addTarget(self, action: .lightSwitcherChange, for: .valueChanged)
         
@@ -55,9 +55,9 @@ class ViewController: UIViewController {
         
         // tempSwitch init
         let tempSwitch = sender as! UISwitch
-                
-        // set the screen brightness
-        UIScreen.main.brightness = tempSwitch.isOn ? CGFloat(1.0) : currentBrightness
+
+        // set the screen brightness by switcher status
+        UIScreen.main.brightness = tempSwitch.isOn ? CGFloat(1.0) : self.currentBrightness
         
     }
     
@@ -65,8 +65,18 @@ class ViewController: UIViewController {
     
     func generateButtonClicked() {
         
+        // make sure text is not empty
+        guard !generatorView.codeTextField.text!.isEmpty else {
+            
+            // view end edit
+            view.endEditing(true)
+            
+            return
+        }
+        
         // set the barcodeImage to imageView
-        generatorView.barcodeImageView.image = generateBarCode(messgae: generatorView.codeTextField.text)
+        generatorView.barcodeImageView.image =
+            BarcodeModel.generateBarCode(messgae: generatorView.codeTextField.text)
         
     }
     
@@ -77,32 +87,7 @@ class ViewController: UIViewController {
         // view endEditing
         view.endEditing(true)
         
-    }
-    
-    // MARK: - generateBarCode with message
-    
-    func generateBarCode(messgae: String?) -> UIImage? {
-        
-        // inputData init
-        let inputData = messgae?.data(using: String.Encoding.utf8, allowLossyConversion: false)
-
-        // CICode128BarcodeGenerator
-        let filter = CIFilter.init(name: "CICode128BarcodeGenerator")!
-
-        // set inputMessage
-        filter.setValue(inputData, forKey: "inputMessage")
-        
-        // if barImage is exist
-        guard let barImage = filter.outputImage else { return nil }
-    
-        // transform init
-        let transform = CGAffineTransform(scaleX: 5.0, y: 5.0)
-        
-        // scaled init
-        let scaled = barImage.transformed(by: transform)
-                
-        return(UIImage(ciImage: scaled))
-    }
+    }        
     
 }
 

@@ -27,13 +27,13 @@ class ViewController: UIViewController {
         
         // generatorView properties
         generatorView.codeTextField.text = "4711238491823"
-        generatorView.generateButton.addTarget(self, action: #selector(generateButtonClicked), for: .touchUpInside)
-        generatorView.lightSwitcher.addTarget(self, action: #selector(lightSwitcherChange), for: .valueChanged)
+        generatorView.generateButton.addTarget(self, action: .generateButtonClicked, for: .touchUpInside)
+        generatorView.lightSwitcher.addTarget(self, action: .lightSwitcherChange, for: .valueChanged)
         
         view.addSubview(generatorView)
         
         // self add gesture
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: .touchScreen))
         
     }
 
@@ -49,16 +49,7 @@ class ViewController: UIViewController {
         
     }
     
-    // MARK: - hideKeyboard
-    
-    func hideKeyboard() {
-        
-        // view endEditing
-        view.endEditing(true)
-        
-    }
-    
-    // MARK: - lightSwitcherChange
+    // MARK: - lightSwitcherChange with sender
     
     func lightSwitcherChange(sender: AnyObject) {
         
@@ -76,6 +67,15 @@ class ViewController: UIViewController {
         
         // set the barcodeImage to imageView
         generatorView.barcodeImageView.image = generateBarCode(messgae: generatorView.codeTextField.text)
+        
+    }
+    
+    // MARK: - touchScreen
+    
+    func touchScreen() {
+        
+        // view endEditing
+        view.endEditing(true)
         
     }
     
@@ -103,5 +103,20 @@ class ViewController: UIViewController {
                 
         return(UIImage(ciImage: scaled))
     }
+    
+}
+
+// MARK: - private Selector extension
+
+private extension Selector {
+    
+    // touchScreen static init
+    static let touchScreen = #selector(ViewController.touchScreen)
+    
+    // lightSwitcherChange static init
+    static let lightSwitcherChange = #selector(ViewController.lightSwitcherChange)
+    
+    // generateButtonClicked static init
+    static let generateButtonClicked = #selector(ViewController.generateButtonClicked)
     
 }

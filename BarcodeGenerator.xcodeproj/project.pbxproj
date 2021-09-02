@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		D9B0DDD026E0ACA200E1FAB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B0DDCE26E0ACA200E1FAB8 /* Main.storyboard */; };
 		D9B0DDD226E0ACA500E1FAB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9B0DDD126E0ACA500E1FAB8 /* Assets.xcassets */; };
 		D9B0DDD526E0ACA500E1FAB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B0DDD326E0ACA500E1FAB8 /* LaunchScreen.storyboard */; };
+		D9B0DDDE26E0AD1200E1FAB8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9B0DDDD26E0AD1200E1FAB8 /* SnapKit */; };
+		D9B0DDE426E0AD5700E1FAB8 /* GeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B0DDE326E0AD5700E1FAB8 /* GeneratorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		D9B0DDD126E0ACA500E1FAB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9B0DDD426E0ACA500E1FAB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9B0DDD626E0ACA500E1FAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9B0DDE326E0AD5700E1FAB8 /* GeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B0DDDE26E0AD1200E1FAB8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +60,48 @@
 		D9B0DDC726E0ACA200E1FAB8 /* BarcodeGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				D9B0DDC826E0ACA200E1FAB8 /* AppDelegate.swift */,
-				D9B0DDCA26E0ACA200E1FAB8 /* SceneDelegate.swift */,
-				D9B0DDCC26E0ACA200E1FAB8 /* ViewController.swift */,
+				D9B0DDE226E0AD3E00E1FAB8 /* Model */,
+				D9B0DDE126E0AD3900E1FAB8 /* View */,
+				D9B0DDE026E0AD2F00E1FAB8 /* Controller */,
+				D9B0DDDF26E0AD2600E1FAB8 /* Delegate */,
 				D9B0DDCE26E0ACA200E1FAB8 /* Main.storyboard */,
 				D9B0DDD126E0ACA500E1FAB8 /* Assets.xcassets */,
 				D9B0DDD326E0ACA500E1FAB8 /* LaunchScreen.storyboard */,
 				D9B0DDD626E0ACA500E1FAB8 /* Info.plist */,
 			);
 			path = BarcodeGenerator;
+			sourceTree = "<group>";
+		};
+		D9B0DDDF26E0AD2600E1FAB8 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D9B0DDC826E0ACA200E1FAB8 /* AppDelegate.swift */,
+				D9B0DDCA26E0ACA200E1FAB8 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		D9B0DDE026E0AD2F00E1FAB8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D9B0DDCC26E0ACA200E1FAB8 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D9B0DDE126E0AD3900E1FAB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9B0DDE326E0AD5700E1FAB8 /* GeneratorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9B0DDE226E0AD3E00E1FAB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +120,9 @@
 			dependencies = (
 			);
 			name = BarcodeGenerator;
+			packageProductDependencies = (
+				D9B0DDDD26E0AD1200E1FAB8 /* SnapKit */,
+			);
 			productName = BarcodeGenerator;
 			productReference = D9B0DDC526E0ACA200E1FAB8 /* BarcodeGenerator.app */;
 			productType = "com.apple.product-type.application";
@@ -98,6 +138,7 @@
 				TargetAttributes = {
 					D9B0DDC426E0ACA200E1FAB8 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -110,6 +151,9 @@
 				Base,
 			);
 			mainGroup = D9B0DDBC26E0ACA200E1FAB8;
+			packageReferences = (
+				D9B0DDDC26E0AD1200E1FAB8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D9B0DDC626E0ACA200E1FAB8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B0DDE426E0AD5700E1FAB8 /* GeneratorView.swift in Sources */,
 				D9B0DDCD26E0ACA200E1FAB8 /* ViewController.swift in Sources */,
 				D9B0DDC926E0ACA200E1FAB8 /* AppDelegate.swift in Sources */,
 				D9B0DDCB26E0ACA200E1FAB8 /* SceneDelegate.swift in Sources */,
@@ -286,15 +331,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79BPG52476;
 				INFOPLIST_FILE = BarcodeGenerator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = joshchen.BarcodeGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,15 +354,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79BPG52476;
 				INFOPLIST_FILE = BarcodeGenerator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = joshchen.BarcodeGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -341,6 +393,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D9B0DDDC26E0AD1200E1FAB8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D9B0DDDD26E0AD1200E1FAB8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D9B0DDDC26E0AD1200E1FAB8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D9B0DDBD26E0ACA200E1FAB8 /* Project object */;
 }
